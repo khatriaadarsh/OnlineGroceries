@@ -1,7 +1,15 @@
 import {StyleSheet, Text, View} from 'react-native';
-import React from 'react';
+import React, {useEffect} from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
-const Splash = () => {
+
+const Splash = ({navigation}) => {
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      navigation.replace('Onboarding');
+    }, 5000);
+    return () => clearTimeout(timer);
+  });
+
   return (
     <View style={styles.container}>
       <Icon name="shopping-cart" size={65} color="#fff" />
