@@ -4,6 +4,7 @@ import Splash from './src/Screens/Splash';
 import Onboarding from './src/Screens/Onboarding';
 import { NavigationContainer } from '@react-navigation/native';
 import SignIn from './src/Screens/SignIn';
+import PhoneNumber from './src/Screens/PhoneNumber';
 
 const Stack = createNativeStackNavigator();
 const StackNavigation = () => {
@@ -12,6 +13,7 @@ const StackNavigation = () => {
       <Stack.Screen name="Splash" component={Splash} />
       <Stack.Screen name="Onboarding" component={Onboarding} />
       <Stack.Screen name="SignIn" component={SignIn} />
+      <Stack.Screen name="PhoneNumber" component={PhoneNumber} />
     </Stack.Navigator>
   )
 }

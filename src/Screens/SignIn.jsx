@@ -7,20 +7,30 @@ import {
   StatusBar,
   StyleSheet,
   Text,
-  TextInput,
-  TouchableOpacity,
   View,
 } from 'react-native';
 import {CountryCode} from './CountryCode';
-const SignIn = () => {
-  const [phoneNumber, setPhoneNumber] = useState('');
-  const [countryCode, setCountryCode] = useState('+1');
+import Icon from 'react-native-vector-icons/FontAwesome';
+const SignIn = ({navigation}) => {
   const [countryModalVisible, setCountryModalVisible] = useState(false);
   const [selectedCountry, setSelectedCountry] = useState({
     name: 'United States',
-    code: 'US',
+    code: 'Select your country',
     dial_code: '+1',
   });
+
+  const handleCountrySelect = item => {
+    setSelectedCountry(item);
+    setCountryModalVisible(false);
+    if (item.code !== 'Select your country') {
+      navigation.navigate('PhoneNumber', {
+        countryCode: item.dial_code,
+        countryName: item.name,
+        countryFlag: item.flag,
+      });
+    }
+  };
+
   return (
     <View style={styles.Container}>
       <View style={styles.imageContainer}>
@@ -51,9 +61,7 @@ const SignIn = () => {
                   <Pressable
                     style={styles.countryItem}
                     onPress={() => {
-                      setSelectedCountry(item);
-                      setCountryCode(item.code);
-                      setCountryModalVisible(false);
+                      handleCountrySelect(item);
                     }}>
                     <Text style={styles.countryFlag}>{item.flag}</Text>
                     <Text style={styles.countryName}>{item.name}</Text>
@@ -64,6 +72,38 @@ const SignIn = () => {
             </View>
           </View>
         </Modal>
+        <Text
+          style={{
+            textAlign: 'center',
+            color: 'gray',
+            fontSize: 14,
+            letterSpacing: 1,
+            marginTop: 8,
+          }}>
+          Or connect with social media
+        </Text>
+        <View style={styles.btnContainer}>
+          <Pressable style={styles.contWithGoogleButton}>
+            <Icon
+              name="google"
+              size={22}
+              color="#ffff"
+              style={{marginRight: 8}}
+            />
+            <Text style={styles.contWithGoogleText}>Continue with Google</Text>
+          </Pressable>
+          <Pressable style={styles.contWithFacebookButton}>
+            <Icon
+              name="facebook"
+              size={22}
+              color="#ffff"
+              style={{marginRight: 8}}
+            />
+            <Text style={styles.contWithFacebookText}>
+              Continue with Facebook
+            </Text>
+          </Pressable>
+        </View>
       </View>
     </View>
   );
@@ -117,7 +157,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     paddingRight: 10,
-    borderRightColor: 'black',
+    borderBottomColor: '#ccc',
     borderBottomWidth: 1,
     borderRadius: 5,
     padding: 10,
@@ -164,5 +204,42 @@ const styles = StyleSheet.create({
   countryCode: {
     fontSize: 16,
     color: '#666',
+  },
+  btnContainer: {
+    marginTop: 40,
+    gap: 22,
+    paddingVertical: 10,
+  },
+  contWithGoogleButton: {
+    backgroundColor: '#5383EC',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 15,
+    borderRadius: 10,
+    gap: 18,
+    paddingVertical: 18,
+  },
+  contWithGoogleText: {
+    color: '#ffff',
+    fontSize: 19,
+    fontWeight: '600',
+    letterSpacing: 0.5,
+  },
+  contWithFacebookButton: {
+    backgroundColor: '#4A66AC',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 15,
+    borderRadius: 10,
+    gap: 18,
+    paddingVertical: 18,
+  },
+  contWithFacebookText: {
+    color: '#ffff',
+    fontSize: 19,
+    fontWeight: '600',
+    letterSpacing: 0.5,
   },
 });
