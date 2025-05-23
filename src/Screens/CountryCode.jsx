@@ -6,5 +6,8 @@ export const CountryCode = [
   {name: 'Australia', flag: '🇦🇺', code: '+61'},
   {name: 'India', flag: '🇮🇳', code: '+91'},
   {name: 'Bangladesh', flag: '🇧🇩', code: '+880'},
-  // Add more countries as needed
+  {name: 'Pakistan', flag: '🇵🇰', code: '+92'},
+  {name: 'Germany', flag: '🇩🇪', code: '+49'},
+  {name: 'France', flag: '🇫🇷', code: '+33'},
+  {name: 'Italy', flag: '🇮🇹', code: '+39'},
 ];

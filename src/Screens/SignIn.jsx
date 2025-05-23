@@ -24,7 +24,7 @@ const SignIn = ({navigation}) => {
     setCountryModalVisible(false);
     if (item.code !== 'Select your country') {
       navigation.navigate('PhoneNumber', {
-        countryCode: item.dial_code,
+        countryCode: item.code,
         countryName: item.name,
         countryFlag: item.flag,
       });
@@ -56,7 +56,7 @@ const SignIn = ({navigation}) => {
             <View style={styles.modalContent}>
               <FlatList
                 data={CountryCode}
-                keyExtractor={item => item.code}
+                keyExtractor={(item, index) => item.name + index}
                 renderItem={({item}) => (
                   <Pressable
                     style={styles.countryItem}
