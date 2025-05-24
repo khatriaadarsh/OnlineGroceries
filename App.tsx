@@ -6,6 +6,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import SignIn from './src/Screens/SignIn';
 import PhoneNumber from './src/Screens/PhoneNumber';
 import Verification from './src/Screens/Verification';
+import SelectLocation from './src/Screens/SelectLocation';
 
 const Stack = createNativeStackNavigator();
 const StackNavigation = () => {
@@ -16,6 +17,7 @@ const StackNavigation = () => {
       <Stack.Screen name="SignIn" component={SignIn} />
       <Stack.Screen name="PhoneNumber" component={PhoneNumber} />
       <Stack.Screen name="Verification" component={Verification} />
+      <Stack.Screen name="SelectLocation" component={SelectLocation} />
     </Stack.Navigator>
   )
 }

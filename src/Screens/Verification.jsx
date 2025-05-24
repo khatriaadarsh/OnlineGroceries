@@ -99,7 +99,7 @@ const Verification = ({navigation}) => {
           onPress={() => {
             if (phoneNumber.length === 4 && /^\d{4}$/.test(phoneNumber)) {
               // Add your verification logic here
-              navigation.navigate('NextScreen'); // Replace with your next screen
+              navigation.navigate('SelectLocation'); // Replace with your next screen
             }
           }}>
           <AntDesign name="right" size={25} color="#ffff" />
