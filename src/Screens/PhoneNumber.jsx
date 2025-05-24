@@ -92,31 +92,40 @@ const PhoneNumber = ({navigation, route}) => {
         </View>
 
         {/* Go to Verification Screen Button */}
-        <Pressable>
+        <Pressable
+          onPress={() => {
+            /* Format validation: phone number should be 10 digits*/
+            const formattedNumber = phoneNumber.replace(/\D/g, '');
+            if (formattedNumber.length === 10) {
+              // Format the number as XXX-XXX-XXXX before navigating
+              const displayNumber = formattedNumber.replace(
+                /(\d{3})(\d{3})(\d{4})/,
+                '$1-$2-$3',
+              );
+              navigation.navigate('Verification', {
+                phoneNumber: displayNumber,
+              });
+            } else {
+              Alert.alert(
+                'Invalid Number',
+                'Please enter a valid 10-digit phone number',
+              );
+            }
+          }}>
+          {/* Right Arrow Button */}
           <AntDesign
             name="right"
             size={25}
             color="#ffff"
-            style={styles.rightArrowIcon}
-            onPress={() => {
-              // Format validation: phone number should be 10 digits
-              const formattedNumber = phoneNumber.replace(/\D/g, '');
-              if (formattedNumber.length === 10) {
-                // Format the number as XXX-XXX-XXXX before navigating
-                const displayNumber = formattedNumber.replace(
-                  /(\d{3})(\d{3})(\d{4})/,
-                  '$1-$2-$3',
-                );
-                navigation.navigate('Verification', {
-                  phoneNumber: displayNumber,
-                });
-              } else {
-                Alert.alert(
-                  'Invalid Number',
-                  'Please enter a valid 10-digit phone number',
-                );
-              }
-            }}
+            style={[
+              styles.rightArrowIcon,
+              {
+                opacity:
+                  phoneNumber.length === 10 && /^\d{10}$/.test(phoneNumber)
+                    ? 1
+                    : 0.5,
+              },
+            ]}
           />
         </Pressable>
       </View>
