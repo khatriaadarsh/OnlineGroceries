@@ -93,6 +93,15 @@ const PhoneNumber = ({navigation, route}) => {
 
         {/* Go to Verification Screen Button */}
         <Pressable
+          style={[
+            styles.rightArrowBtn,
+            {
+              opacity:
+                phoneNumber.length === 10 && /^\d{10}$/.test(phoneNumber)
+                  ? 1
+                  : 0.5,
+            },
+          ]}
           onPress={() => {
             /* Format validation: phone number should be 10 digits*/
             const formattedNumber = phoneNumber.replace(/\D/g, '');
@@ -113,20 +122,7 @@ const PhoneNumber = ({navigation, route}) => {
             }
           }}>
           {/* Right Arrow Button */}
-          <AntDesign
-            name="right"
-            size={25}
-            color="#ffff"
-            style={[
-              styles.rightArrowIcon,
-              {
-                opacity:
-                  phoneNumber.length === 10 && /^\d{10}$/.test(phoneNumber)
-                    ? 1
-                    : 0.5,
-              },
-            ]}
-          />
+          <AntDesign name="right" size={25} color="#ffff" />
         </Pressable>
       </View>
       {/* Custom Keypad - Always Visible */}
@@ -145,11 +141,10 @@ const styles = StyleSheet.create({
     marginLeft: 30,
     marginTop: 20,
   },
-  rightArrowIcon: {
-    marginTop: 20,
+  rightArrowBtn: {
     position: 'absolute',
     right: 25,
-    top: 80,
+    top: '150%',
     backgroundColor: 'green',
     padding: 15,
     borderRadius: 50,

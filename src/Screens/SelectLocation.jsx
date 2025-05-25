@@ -1,7 +1,19 @@
 import {StatusBar, StyleSheet, Text, View, Image} from 'react-native';
-import React from 'react';
+import React, {useState} from 'react';
 import AntDesign from 'react-native-vector-icons/AntDesign';
+// import SelectDropdown from 'react-native-select-dropdown';
+// const ZoneData = ['Zone 1', 'Zone 2', 'Zone 3', 'Zone 4', 'Zone 5'];
+// const AreaData = ['Area A', 'Area B', 'Area C', 'Area D'];
 const SelectLocation = ({navigation}) => {
+  // const [selectedZone, setSelectedZone] = useState(null);
+  // const [selectedArea, setSelectedArea] = useState(null);
+
+  // const handleZoneSelect = (selectedItem) => {
+  //   setSelectedZone(selectedItem);
+  // };
+  // const handleAreaSelect = (selectedItem) => {
+  //   setSelectedArea(selectedItem);
+  // };
   return (
     <View>
       <AntDesign
@@ -22,7 +34,24 @@ const SelectLocation = ({navigation}) => {
           area
         </Text>
       </View>
-      
+      {/* <View style={styles.zoneAndAreaInput}>
+        <Text style={{color: 'gray'}}>Your Zone</Text>
+        <SelectDropdown
+          data={ZoneData}
+          defaultButtonText="Select Country"
+          onSelect={handleZoneSelect}
+          buttonStyle={styles.dropdown}
+          buttonTextStyle={styles.dropdownText}
+        />
+        <Text style={{color: 'gray', marginTop: 20}}>Your Area</Text>
+        <SelectDropdown
+          data={AreaData}
+          defaultButtonText="Select Zone"
+          onSelect={handleAreaSelect}
+          buttonStyle={styles.dropdown}
+          buttonTextStyle={styles.dropdownText}
+        />
+      </View> */}
     </View>
   );
 };
@@ -58,5 +87,10 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginHorizontal: 55,
     lineHeight: 20,
+  },
+  zoneAndAreaInput: {
+    position: 'relative',
+    top: '30%',
+    left: '10%',
   },
 });
