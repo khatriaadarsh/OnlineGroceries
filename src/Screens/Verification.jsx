@@ -120,8 +120,8 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
   },
   leftArrowIcon: {
-    marginLeft: 30,
-    marginTop: 60,
+    marginLeft: 10,
+    marginTop: 50,
   },
   subContainer: {
     marginLeft: '10%',

@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StatusBar, StyleSheet, Text, View } from 'react-native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Splash from './src/Screens/Splash';
 import Onboarding from './src/Screens/Onboarding';
@@ -7,6 +7,7 @@ import SignIn from './src/Screens/SignIn';
 import PhoneNumber from './src/Screens/PhoneNumber';
 import Verification from './src/Screens/Verification';
 import SelectLocation from './src/Screens/SelectLocation';
+import Login from './src/Screens/Login';
 
 const Stack = createNativeStackNavigator();
 const StackNavigation = () => {
@@ -18,12 +19,14 @@ const StackNavigation = () => {
       <Stack.Screen name="PhoneNumber" component={PhoneNumber} />
       <Stack.Screen name="Verification" component={Verification} />
       <Stack.Screen name="SelectLocation" component={SelectLocation} />
+      <Stack.Screen name="Login" component={Login} />
     </Stack.Navigator>
   )
 }
 const App = () => {
   return (
     <NavigationContainer>
+      <StatusBar barStyle="dark-content" />
       <StackNavigation />
     </NavigationContainer>
   )

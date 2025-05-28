@@ -170,3 +170,43 @@ const styles = StyleSheet.create({
 
 For icons in android/app/gradle
 apply from: file("../../node_modules/react-native-vector-icons/fonts.gradle")
+
+
+
+==========> DropDown Code 
+
+// import SelectDropdown from 'react-native-select-dropdown';
+// const ZoneData = ['Zone 1', 'Zone 2', 'Zone 3', 'Zone 4', 'Zone 5'];
+// const AreaData = ['Area A', 'Area B', 'Area C', 'Area D'];
+  // const [selectedZone, setSelectedZone] = useState(null);
+  // const [selectedArea, setSelectedArea] = useState(null);
+
+  // const handleZoneSelect = (selectedItem) => {
+  //   setSelectedZone(selectedItem);
+  // };
+  // const handleAreaSelect = (selectedItem) => {
+  //   setSelectedArea(selectedItem);
+  // };
+  {/* <View style={styles.zoneAndAreaInput}>
+        <Text style={{color: 'gray'}}>Your Zone</Text>
+        <SelectDropdown
+          data={ZoneData}
+          defaultButtonText="Select Country"
+          onSelect={handleZoneSelect}
+          buttonStyle={styles.dropdown}
+          buttonTextStyle={styles.dropdownText}
+        />
+        <Text style={{color: 'gray', marginTop: 20}}>Your Area</Text>
+        <SelectDropdown
+          data={AreaData}
+          defaultButtonText="Select Zone"
+          onSelect={handleAreaSelect}
+          buttonStyle={styles.dropdown}
+          buttonTextStyle={styles.dropdownText}
+        />
+      </View> */}
+       zoneAndAreaInput: {
+    position: 'relative',
+    top: '30%',
+    left: '10%',
+  },

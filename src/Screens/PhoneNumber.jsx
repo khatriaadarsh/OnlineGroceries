@@ -59,6 +59,7 @@ const PhoneNumber = ({navigation, route}) => {
 
   return (
     <View style={styles.container}>
+      <StatusBar barStyle="dark-content" backgroundColor="black" />
       {/* Back Screen Button */}
       <AntDesign
         name="left"

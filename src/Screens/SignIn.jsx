@@ -33,6 +33,7 @@ const SignIn = ({navigation}) => {
 
   return (
     <View style={styles.Container}>
+      <StatusBar barStyle="dark-content" />
       <View style={styles.imageContainer}>
         <Image source={require('../Images/signin.png')} style={styles.image} />
         <Text style={styles.imageText}>nectar</Text>
