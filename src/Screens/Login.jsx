@@ -35,6 +35,7 @@ const Login = ({navigation}) => {
           <Text style={styles.emailTitle}>Email</Text>
           <TextInput
             textContentType="emailAddress"
+            autoCapitalize="none"
             style={styles.inputFeild}
             placeholder="Enter your email"
             keyboardType="email-address"
@@ -47,6 +48,7 @@ const Login = ({navigation}) => {
             secureTextEntry={true}
             style={styles.inputFeild}
             placeholder="Enter your password"
+            keyboardType="password"
             onChangeText={setPassword}
           />
         </View>
