@@ -8,6 +8,8 @@ import PhoneNumber from './src/Screens/PhoneNumber';
 import Verification from './src/Screens/Verification';
 import SelectLocation from './src/Screens/SelectLocation';
 import Login from './src/Screens/Login';
+import SignUp from './src/Screens/SignUp';
+import HomeScreen from './src/Screens/HomeScreen';
 
 const Stack = createNativeStackNavigator();
 const StackNavigation = () => {
@@ -22,6 +24,8 @@ const StackNavigation = () => {
       <Stack.Screen name="Verification" component={Verification} />
       <Stack.Screen name="SelectLocation" component={SelectLocation} />
       <Stack.Screen name="Login" component={Login} />
+      <Stack.Screen name="SignUp" component={SignUp} />
+      <Stack.Screen name="HomeScreen" component={HomeScreen} />
     </Stack.Navigator>
   );
 };

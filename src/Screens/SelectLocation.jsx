@@ -6,7 +6,7 @@ import {
   Image,
   Pressable,
 } from 'react-native';
-import React, {useState, useEffect, useRef} from 'react';
+import React, {useState} from 'react';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import {Dropdown} from 'react-native-element-dropdown';
 
