@@ -11,25 +11,28 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 import {Dropdown} from 'react-native-element-dropdown';
 
 const Zone = [
-  {label: 'Item 1', value: '1'},
-  {label: 'Item 2', value: '2'},
-  {label: 'Item 3', value: '3'},
-  {label: 'Item 4', value: '4'},
-  {label: 'Item 5', value: '5'},
-  {label: 'Item 6', value: '6'},
-  {label: 'Item 7', value: '7'},
-  {label: 'Item 8', value: '8'},
+  {label: 'Punjab', value: 'punjab'},
+  {label: 'Sindh', value: 'sindh'},
+  {label: 'Khyber Pakhtunkhwa', value: 'kpk'},
+  {label: 'Balochistan', value: 'balochistan'},
+  {label: 'Gilgit-Baltistan', value: 'gb'},
+  {label: 'Azad Kashmir', value: 'ajk'},
+  {label: 'Islamabad Capital', value: 'ict'},
 ];
 
 const Area = [
-  {label: 'Item 1', value: '1'},
-  {label: 'Item 2', value: '2'},
-  {label: 'Item 3', value: '3'},
-  {label: 'Item 4', value: '4'},
-  {label: 'Item 5', value: '5'},
-  {label: 'Item 6', value: '6'},
-  {label: 'Item 7', value: '7'},
-  {label: 'Item 8', value: '8'},
+  {label: 'Lahore', value: 'lahore'},
+  {label: 'Karachi', value: 'karachi'},
+  {label: 'Islamabad', value: 'islamabad'},
+  {label: 'Peshawar', value: 'peshawar'},
+  {label: 'Quetta', value: 'quetta'},
+  {label: 'Faisalabad', value: 'faisalabad'},
+  {label: 'Rawalpindi', value: 'rawalpindi'},
+  {label: 'Multan', value: 'multan'},
+  {label: 'Gujranwala', value: 'gujranwala'},
+  {label: 'Sialkot', value: 'sialkot'},
+  {label: 'Hyderabad', value: 'hyderabad'},
+  {label: 'Sargodha', value: 'sargodha'},
 ];
 
 const SelectLocation = ({navigation}) => {

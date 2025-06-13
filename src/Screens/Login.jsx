@@ -12,6 +12,8 @@ import {useState} from 'react';
 const Login = ({navigation}) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false); // Add this state
+
   return (
     <View style={styles.container}>
       <AntDesign
@@ -29,8 +31,7 @@ const Login = ({navigation}) => {
       />
       <View style={styles.textContainr}>
         <Text style={styles.title}>Loging</Text>
-        <Text style={styles.subTitle}>Enter your emails and password</Text>
-
+        <Text style={styles.subTitle}>Enter your email and password</Text>
         <View style={styles.inputFieldsContainer}>
           <Text style={styles.emailTitle}>Email</Text>
           <TextInput
@@ -43,14 +44,25 @@ const Login = ({navigation}) => {
             onChangeText={setEmail}
           />
           <Text style={styles.passwordTitle}>Password</Text>
-          <TextInput
-            textContentType="password"
-            secureTextEntry={true}
-            style={styles.inputFeild}
-            placeholder="Enter your password"
-            keyboardType="password"
-            onChangeText={setPassword}
-          />
+          <View style={styles.passwordContainer}>
+            <TextInput
+              textContentType="password"
+              secureTextEntry={!showPassword}
+              style={[styles.inputFeild, {flex: 1}]}
+              placeholder="Enter your password"
+              keyboardType="password"
+              onChangeText={setPassword}
+            />
+            <Pressable
+              onPress={() => setShowPassword(!showPassword)}
+              style={styles.eyeIcon}>
+              <MaterialCommunityIcons
+                name={showPassword ? 'eye' : 'eye-off'}
+                size={24}
+                color="gray"
+              />
+            </Pressable>
+          </View>
         </View>
         <Text style={styles.forgetPassTxt}>Forget Password?</Text>
       </View>
@@ -66,7 +78,7 @@ const Login = ({navigation}) => {
           } else if (password.length < 6) {
             Alert.alert('Error', 'Password must be at least 6 characters');
           } else {
-            navigation.navigate('HomeScreen'); // Replace with your next screen
+            navigation.navigate('HomeScreen');
             Alert.alert('Success', 'Logged in successfully');
           }
         }}>
@@ -74,7 +86,6 @@ const Login = ({navigation}) => {
       </Pressable>
 
       <Text style={styles.dontHaveAccountTxt}>Don't have an account?</Text>
-      {/* SignUp Button */}
       <Pressable
         style={styles.signupBtn}
         onPress={() => navigation.navigate('SignUp')}>
@@ -122,7 +133,8 @@ const styles = StyleSheet.create({
   },
   emailTitle: {
     fontSize: 16,
-    color: '#333',
+    color: 'gray',
+    fontWeight: 'bold',
   },
   inputFeild: {
     height: 50,
@@ -131,11 +143,22 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: '#333',
   },
+
+  passwordContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    borderBottomColor: 'gray',
+    marginTop: '2%',
+  },
   passwordTitle: {
     fontSize: 16,
-    color: '#333',
-    marginTop: '10%',
-    marginBottom: '2%',
+    color: 'gray',
+    fontWeight: 'bold',
+    marginTop: '8%',
+  },
+  eyeIcon: {
+    position: 'absolute',
+    right: 5,
   },
   forgetPassTxt: {
     fontSize: 16,
