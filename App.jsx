@@ -10,6 +10,7 @@ import SelectLocation from './src/Screens/SelectLocation';
 import Login from './src/Screens/Login';
 import SignUp from './src/Screens/SignUp';
 import HomeScreen from './src/Screens/HomeScreen';
+import ProductDetails from './src/Screens/BottomNavigation/ProductDetails';
 
 const Stack = createNativeStackNavigator();
 const StackNavigation = () => {
@@ -26,6 +27,7 @@ const StackNavigation = () => {
       <Stack.Screen name="Login" component={Login} />
       <Stack.Screen name="SignUp" component={SignUp} />
       <Stack.Screen name="HomeScreen" component={HomeScreen} />
+      <Stack.Screen name="ProductDetails" component={ProductDetails} />
     </Stack.Navigator>
   );
 };
